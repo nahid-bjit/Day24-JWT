@@ -98,19 +98,21 @@ class OrderController {
                     { _id: result._id },
                     { $set: { totalPrice: totalPrice } }
                 );
-                return res
-                    .status(HTTP_STATUS.CREATED)
-                    .send(success("successfully added the products", result));
+
+                res.send("created")
             } else {
-                return res.status(400).send(success("Failed to add the order"));
+                // return res.status(400).send(success("Failed to add the order"));
+                res.send("not created")
             }
         } catch (error) {
             console.log("Order insert error: ", error);
-            return res
-                .status(HTTP_STATUS.INTERNAL_SERVER_ERROR)
-                .send(failure("Internal error occured"));
-        }
-    };
+            //     return res
+            //         .status(HTTP_STATUS.INTERNAL_SERVER_ERROR)
+            //         .send(failure("Internal error occured"));
+            // }
+            res.send("not created")
+        };
+    }
 
     getOneById = async (req, res) => {
         try {

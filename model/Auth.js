@@ -14,17 +14,16 @@ const authSchema = new mongoose.Schema(
             type: Number, // 1 = admin, 2 = regular
             required: false,
             default: 1,
-        }
+        },
         // verified: {
         //     type: Boolean,
         //     required: true,
         //     default: 2,
         // },
-        // user: {
-        //     type: String,
-        //     ref: "User",
-        //     required: true,
-        // },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: false
+        },
     },
     { timestamps: true }
 );

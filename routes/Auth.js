@@ -27,6 +27,8 @@ const routes = express.Router(); // Use express.Router() instead of express()
 
 const AuthController = require("../controller/AuthController");
 const { authValidator } = require("../middleware/validation"); // Import the authValidator directly
+const { isAuthorized } = require("../middleware/auth");
+//const { isAuthorized } = require("../middleware/auth")
 
 routes.post("/login", AuthController.login);
 routes.post("/sign-up", authValidator.signup, AuthController.signup);

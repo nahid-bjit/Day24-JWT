@@ -8,7 +8,7 @@ const ProductController = require("../controller/ProductController");
 routes.get("/all", ProductController.getAll);
 routes.get("/detail/:id", ProductController.getOneById);
 //routes.delete("/delete/:id", ProductController.deletetById);
-//routes.post("/create", productValidator.create, ProductController.create);
+//routes.post("/create", ProductController.create);
 // // routes.post("/create", createValidation, ProductController.create);
 //routes.patch("/update/:id", ProductController.updateById);
 
